@@ -55,4 +55,27 @@ const Data1: model.PieData = {
 };
 
 
+const Data2 : model.PieData= {
+    title: "Purchases",
+    data: [
+        {
+            label: "BP-MIRA",
+            value: 999.99
+        },{
+            label: "BP-BEN",
+            value: 1909.99
+        },{
+            label: "BP-DAVE",
+            value: 889.99
+        },{
+            label: "BP-JADE",
+            value: 2789.99
+        },{
+            label: "BP-NOEL",
+            value: 789.99
+        },
+    ]
+}
+
 export let monthsData = Data1
+export let purchasesData = Data2

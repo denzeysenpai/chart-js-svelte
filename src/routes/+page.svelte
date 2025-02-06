@@ -1,8 +1,24 @@
 <script lang="ts">
+  import { chartRender } from "$lib/components/chartRender.svelte";
   import PieChart from "$lib/components/PieChart/PieChart.svelte";
   import StackedChart from "$lib/components/StackedChart/StackedChart.svelte";
-  import { monthsData } from "$lib/data/data";
+  import { monthsData, purchasesData } from "$lib/data/data";
+  let display = $state(monthsData);
 </script>
 
-<PieChart Data={monthsData} />
+<button
+  onclick={() => {
+    display = monthsData;
+    chartRender.updateOptions(monthsData);
+  }}>Months</button
+>
+<button
+  onclick={() => {
+    display = purchasesData;
+    chartRender.updateOptions(purchasesData);
+  }}>Purchases</button
+>
+
+<PieChart Data={display} />
+
 <StackedChart />
