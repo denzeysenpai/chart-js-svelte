@@ -1,14 +1,14 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import { chartRender, newConfig } from "../chartRender.svelte";
+  import { PieChartRenderer, newConfig } from "./renderer.svelte";
 
   let { Data } = $props();
 
   onMount(() => {
     if (Data) {
       const config = newConfig(Data);
-      chartRender.initialize("pieChart", config);
-      chartRender.updateDraw();
+      PieChartRenderer.initialize("pieChart", config);
+      PieChartRenderer.updateDraw();
     }
   });
 
